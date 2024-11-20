@@ -1,0 +1,18 @@
+[package]
+name = "rustgo"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "rustgo"
+crate-type = ["staticlib"]
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+strip = true
+
+[dependencies]
+libc-print = "0.1.23"
